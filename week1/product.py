@@ -7,7 +7,7 @@ class Product(object):
         self.cost = cost
         self.status = "for sale"
 
-        self.display_info()
+        
 
     def sell(self): 
         print "Product " + self.item_name + "has been sold"
@@ -45,5 +45,5 @@ class Product(object):
 prod1 = Product(2, "pencil", 4 , "yellow", .5)
 prod2 = Product(4, "notebook", 16, "mead", 2.00)
 
-prod1.display_info().tax().sell().display_info()
+prod1.display_info()
 
