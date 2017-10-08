@@ -3,15 +3,27 @@ class MathDojo(object):
         self.value = 0
 
     def add(self, *nums):
-        for i in range(len(nums)):
-            x = nums[i]
-            self.value = self.value + x
+        for i in nums:
+            if type(i) == list:
+                for k in i:
+                    self.value += k
+            if type(i) == int: 
+                self.value += i
+            if type(i) == tuple: 
+                for l in i:
+                    self.value += l
         return self
 
     def sub(self, *nums):
-        for i in range(len(nums)):
-            x = nums[i]
-            self.value = self.value - x     
+        for i in nums:
+            if type(i) == list:
+                for k in i:
+                    self.value -= k
+            if type(i) == int: 
+                self.value -= i
+            if type(i) == tuple: 
+                for l in i:
+                    self.value -= l
         return self
     
     def result(self): 
