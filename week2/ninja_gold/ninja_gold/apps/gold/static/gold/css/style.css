@@ -1,0 +1,26 @@
+.locations {
+    display: inline;
+}
+body {
+font-family: monospace;
+
+}
+#farm, #house, #cave, #casino {
+    display: inline-block;
+    border: 5px solid black;
+    text-align: center;
+}
+
+#reset {
+    margin-top: 10px;
+}
+
+.activity {
+    width: 50%;
+    height: 400px;
+    overflow: scroll;
+    border: 2px solid black;
+    margin-top: 10px;
+    padding-left: 3px;
+
+}

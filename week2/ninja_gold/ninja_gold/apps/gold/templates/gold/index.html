@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'gold/css/style.css'%}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div class='top'>
+        <h1>Your Gold:{{ myGold }}</h1>
+    </div>
+    <div class='locations'>
+        <div id='farm'>
+            <h1>Farm</h1>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method='post'>
+                {% csrf_token %}
+            <input type="hidden" name="building" value='farm'>
+            <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div id='cave'>
+                <h1>Cave</h1>
+                <p>(earns 5-10 gold)</p>
+                <form action="/process_money" method='post'>
+                    {% csrf_token %}
+                <input type="hidden" name="building" value='cave'>
+                <input type="submit" value="Find Gold!">
+                </form>
+        </div>
+        <div id='house'>
+                <h1>House</h1>
+                <p>(earns 2-5 gold)</p>
+                <form action="/process_money" method='post'>
+                    {% csrf_token %}
+                <input type="hidden" name="building" value='house'>
+                <input type="submit" value="Find Gold!">
+                </form>
+        </div>
+        <div id='casino'>
+                <h1>Casino</h1>
+                <p>(earns/takes 0-50 gold)</p>
+                <form action="/process_money" method='post'>
+                    {% csrf_token %}
+                <input type="hidden" name="building" value='casino'>
+                <input type="submit" value="Find Gold!">
+                </form>
+        </div>
+    </div>
+    <div>
+        <form action="/reset" method='post' id='reset'>
+            {% csrf_token %}
+            <input type="submit" value="Reset">
+        </form>
+        <h3>Activities</h3>
+        <div class='activity'>
+        {% for activity in activities %}
+           <p> {{ activity.activities }} </p>
+        {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>
