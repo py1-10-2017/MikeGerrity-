@@ -14,7 +14,7 @@ def index(request):
         }    
     except KeyError:
         context = {
-        'activities' : 'none',
+        'activities' : '',
         'myGold' : 0
         }  
    
@@ -22,7 +22,7 @@ def index(request):
 
 
 def income(request):
-    timeofday = strftime("%Y-%m-%d %H:%M %p", gmtime())
+    timeofday = strftime("%Y-%m-%d %H:%M", gmtime())
     try: 
         request.session['activity']
     except KeyError:
