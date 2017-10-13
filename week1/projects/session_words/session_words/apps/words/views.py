@@ -18,8 +18,6 @@ def add(request):
             new_word['big'] = "big"
         if key != "big":
             new_word[key] = value
-        else:
-            new_word['big'] = ""
 
     new_word['created_at'] = datetime.now().strftime("%H:%M %p, %B %d, %Y")
     try:
